@@ -1,0 +1,338 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+*, *:before, *:after{
+	box-sizing: border-box;
+}
+body {
+	line-height: 1;
+	font-family: Tahoma, Verdana, sans-serif;
+	height:100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #f1f1f1;
+}
+.name{
+	text-align: center;
+	z-index:3;
+}
+header {
+	width: 100%;
+	min-height: 80px;
+	background-color: #0099cc;
+	color: white;
+	background-size: cover;
+}
+header:before{
+	content:"";
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:13%;
+	background-color:#0099cc;
+	z-index:3;
+}
+.header-body{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	height: 120px;
+	align-items: center;
+}
+.header-list{
+	display: flex;
+	z-index: 3;
+	position:relative;
+	padding:10px;
+}
+.header-list li{
+	list-style: none;
+	margin: 0px 0px 0px 20px;
+}
+.header-link{
+	color:white;
+	text-transform: uppercase;
+	font-size: 18px;
+	text-decoration: none;
+}
+.logo{
+	width:120px;
+	z-index:4;
+	position:relative;
+}
+.logo img{
+	max-width: 100%;
+	display: block;
+}
+.burger{
+	display:none;
+}
+@media (max-width:767px){
+	.header-body{
+		height:110px;
+	}
+	.logo{
+		width:120px;
+	}
+	.burger{
+    display: block;
+	position:relative;
+	width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+	border-radius: 50%;
+	z-index:5;
+	}
+	.burger span{
+		position:absolute;
+		background-color:#ffffff;
+		width: 70%;
+		height:2px;
+		left:7px;
+		top:23px;
+		transition: all 0.3s ease 0s;
+	}
+	.burger:before,
+	.burger:after{
+		content:'';
+		background-color:#ffffff;
+		position: absolute;
+		width:70%;
+		height:2px;
+		left:7px;
+		transition: all 0.3s ease 0s;
+	}
+	.burger:before{
+		top: 14px;
+	}
+	.burger:after{
+		bottom: 12px;
+	}
+	.burger.active span{
+		transform: scale(0);
+	}
+	.burger.active:before{
+		transform:rotate(45deg);
+		top: 23px;
+	}
+	.burger.active:after{
+		transform:rotate(-45deg);
+		top: 23px;
+	}
+    .header-menu{
+		position:fixed;
+		top: 100%;
+		left:0;
+		width:100%;
+		height:100%;
+		overflow:auto;
+		transition: all 0.3s ease 0s;
+		background-color: #18b5a4;
+		padding: 140px 10px 20px 10px;
+	}
+	.header-menu.active{
+		z-index: 2;
+		top:0;
+	}
+    .header-list{
+		display:block;
+	}
+	.header-list li{
+		margin: 0px 0px 20px 0px
+	}
+	.header-link{
+		font-size: 24px;
+	}
+}
+.homePage{
+	z-index:1;
+	width: auto;
+	margin: 0 20px;
+	max-width:100%;
+	height:100%;
+	position: relative;
+}
+.homePage-menu{
+	width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 50px rgb(69 69 69 / 10%);
+}
+.homePage-menu img{
+	width: auto;
+    height: 50px;
+}
+@media (max-width: 900px), (orientation: portrait) and (width: 767px) and (height: 1366px){
+   .eda {
+    display: none;
+   }
+}
+.eda{
+margin-top: 10px;
+    font-family: "Gotham Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+}
+.side{
+	    width: 272px;
+    float: right;
+    margin-top: 85px;
+    position: sticky;
+    transition: top .5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+.lo{
+	padding-top: 16px;
+	text-align: center;
+}
+.content{
+	display: block;
+	margin-bottom: 8px;
+	overflow:hidden;
+}
+.content img{
+	max-width:100%;
+	vertical-align: middle;
+}
+.asortiment{
+	margin-right: 304px;
+    transition: opacity .3s;
+    opacity: 1;
+}
+.text{
+	position: relative;
+    font-family: "Gotham Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-weight: 700;
+    font-size:24px;
+	color: #70254f;
+    line-height: 1.33;
+	margin: 20px auto 25px;
+	text-align:center;
+}
+.icom{
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    color: #70544f;
+    transition: color .35s;
+}
+.top {
+	position: fixed;
+	right: 45px;
+	bottom: 45px;
+	text-decoration:none;
+	color: orange;
+	background-color: #f1f1f1;
+   }
+h2 {
+    font-size: 27px;
+    margin: 0 0 20px;
+    line-height: 1;
+}
+main {
+	background: #ffffff;
+	padding-bottom:30px;
+	min-heig
+	margin-top:30px;
+	background-color: #f1f1f1;
+}
+.small-header {
+    background: url(tree.png) repeat-x center;
+    text-align: center;
+    margin: 0 0 50px;
+    min-height: 20px;
+}
+.nblock {
+    text-align: center;
+    width: 33.33333333333333%;
+	display:inline-block;
+}
+.Blob{
+	position: relative;
+    width: auto !important;
+    max-width: none !important;
+    padding: 0;
+	padding: 60px 0 10px;
+}
+.line{
+	padding:30px;
+	vertical-align: middle;
+	margin:0 auto;
+}
+.info-block{
+    padding: 35px 20px 25px 35px;
+    border-bottom: 3px solid #E9F1F3;
+}
+.step-block h4 {
+    font-family: "intro_regular";
+    font-size: 19px;
+    letter-spacing: -.3px;
+    text-transform: none;
+    color: #333;
+    margin: 10px 0 20px;
+	padding: 10px;
+}
+.info-block p{
+	margin: 0 0 10px;
+}
+.service {
+    padding: 30px 40px 20px;
+    border-bottom: 3px solid #E9F1F3;
+}
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+table {
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.table > tbody > tr > td, .table > tbody > tr > th {
+    padding: 8px;
+    line-height: 1.428571429;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+}
+footer {
+	z-index:3;
+	background: #000000;
+	color: #ffffff;
+	padding: 0px;
+	margin-top:auto;
+	height:120px;
+}
+.wrap{
+	margin:30px;
+	text-align: center;
+}
+.footer-email{
+	text-decoration: none;
+	color: orange;
+}
